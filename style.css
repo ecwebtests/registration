@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Noto Sans",sans-serif;
+}
+
+:root{
+    --primary:#2563eb;
+    --dark:#111827;
+    --text:#1f2937;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+    --background:#f8fafc;
+    --white:#ffffff;
+}
+
+/* ================= BODY ================= */
+body{
+    min-height:100vh;
+    background:var(--background);
+    overflow-x:hidden;
+}
+
+/* ================= LAYOUT ================= */
+.registrationFrom{
+    width:100%;
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    background:#fff;
+}
+
+/* ================= LEFT SECTION ================= */
+.card-left{
+    position:relative;
+    background:
+        linear-gradient(rgba(5,15,35,0.58),rgba(5,15,35,0.58)),
+        url("/images/cctvinter2.jpg") center/cover no-repeat;
+    display:flex;
+    align-items:flex-end;
+    padding:60px;
+    overflow:hidden;
+}
+
+.card-left::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.08)
+    );
+}
+
+.card-paragraph{
+    position:relative;
+    z-index:2;
+    max-width:700px;
+    color:#fff;
+}
+
+.header{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-bottom:20px;
+}
+
+.icon-bg{
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    background:#fff;
+    color:var(--primary);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:38px;
+}
+
+.header h1{
+    font-size:2rem;
+    line-height:1.1;
+    font-weight:800;
+    color:#fff;
+}
+
+.service-text{
+    font-size:1rem;
+    color:rgba(255,255,255,0.92);
+}
+
+/* ================= RIGHT SECTION ================= */
+.card{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    background:#fafafa;
+}
+
+form{
+    width:100%;
+    max-width:660px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:45px 35px;
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.04);
+}
+
+form h2{
+    font-size:2.3rem;
+    color:#000;
+    margin-bottom:8px;
+}
+
+form > p{
+    color:var(--muted);
+    font-size:1.1rem;
+    margin-bottom:35px;
+}
+
+/* ================= INPUTS ================= */
+.input-icon{
+    position:relative;
+    margin-bottom:22px;
+}
+
+.input-icon i{
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#6b7280;
+    font-size:22px;
+}
+
+.input-icon input{
+    width:100%;
+    height:62px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    outline:none;
+    padding:0 18px 0 55px;
+    font-size:1rem;
+    background:#fff;
+    color:#111827;
+    transition:0.3s ease;
+}
+
+.input-icon input:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 4px rgba(37,99,235,0.08);
+}
+
+.input-icon input::placeholder{
+    color:#9ca3af;
+}
+
+/* ================= BUTTON ================= */
+button{
+    width:100%;
+    height:60px;
+    border:none;
+    border-radius:12px;
+    background:#111111;
+    color:#fff;
+    font-size:1.05rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s ease;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#000;
+    transform:translateY(-1px);
+}
+
+/* ================= LINK ================= */
+.link{
+    margin-top:28px;
+    text-align:center;
+    color:#6b7280;
+    font-size:1rem;
+}
+
+.link a{
+    color:#111827;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.link a:hover{
+    text-decoration:underline;
+}
+
+/* ================= TABLETS ================= */
+@media(max-width:1024px){
+
+    .registrationFrom{
+        grid-template-columns:1fr;
+    }
+
+    .card-left{
+        min-height:420px;
+        align-items:flex-end;
+        padding:40px;
+    }
+
+    .header h1{
+        font-size:2.7rem;
+    }
+
+    .service-text{
+        font-size:1.05rem;
+        max-width:800px;
+    }
+
+    .card{
+        margin-top:-110px;
+        position:relative;
+        z-index:5;
+        background:transparent;
+        padding:0 30px 40px;
+    }
+
+    form{
+        border-radius:24px;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+    body{
+        background:#fff;
+    }
+
+    .registrationFrom{
+        grid-template-columns:1fr;
+    }
+
+    .card-left{
+        min-height:260px;
+        padding:25px;
+        align-items:flex-end;
+        border-bottom-left-radius:24px;
+        border-bottom-right-radius:24px;
+    }
+
+    .icon-bg{
+        width:62px;
+        height:62px;
+        font-size:32px;
+    }
+
+    .header{
+        gap:14px;
+        margin-bottom:10px;
+    }
+
+    .header h1{
+        font-size:2.2rem;
+        line-height:1.2;
+    }
+
+    .service-text{
+        font-size:1rem;
+        line-height:1.7;
+        color:rgba(255,255,255,0.88);
+
+        display:-webkit-box;
+        -webkit-line-clamp:4;
+        -webkit-box-orient:vertical;
+        overflow:hidden;
+    }
+
+    .card{
+        background:transparent;
+        padding:0 18px 30px;
+        margin-top:-70px;
+    }
+
+    form{
+        padding:30px 22px;
+        border-radius:20px;
+    }
+
+    form h2{
+        font-size:2rem;
+    }
+
+    form > p{
+        font-size:1rem;
+        margin-bottom:28px;
+    }
+
+    .input-icon input{
+        height:56px;
+        font-size:0.96rem;
+    }
+
+    button{
+        height:56px;
+    }
+
+    .link{
+        font-size:0.95rem;
+    }
+}
+
+/* ================= EXTRA SMALL ================= */
+@media(max-width:480px){
+
+    .card-left{
+        min-height:230px;
+        padding:20px;
+    }
+
+    .header h1{
+        font-size:1.9rem;
+    }
+
+    .service-text{
+        font-size:0.95rem;
+    }
+
+    .card{
+        padding:0 14px 24px;
+    }
+
+    form{
+        padding:26px 18px;
+    }
+}

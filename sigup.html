@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+  
+</head>
+<body>
+
+    <div class="registrationFrom">
+        <div class="card-left">
+        <div class="card-paragraph">
+            <div class="header">
+                <i class="material-icons icon-bg">waves</i>
+               <h1>
+                    
+                    Welcome To FERMI IT solutions
+                </h1>
+            </div>
+            <p class="service-text">
+                We are a full-service electrical contractor offering 24/7 safe and efficient 
+                solutions for modern security, electrical, and IT needs. Our services include 
+                automatic gates, electric fences, CCTV surveillance, motion sensors, metal detectors, 
+                access control systems, smart alarms, fire alarms, POS systems, GPS tracking, 
+                WAN/LAN installations, wiring, HVAC systems, refrigeration, water heating, and 
+                custom electrical panel design with automation.
+            </p>
+        </div>
+
+        </div>
+        <div class="card">
+        <form id="form">
+             <h2>Sign Up</h2>
+             <p>Create an account</p>
+            <!-- Username -->
+            <div class="input-icon">
+                <i class="material-icons">person</i>
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+
+            <!-- Email -->
+            <div class="input-icon">
+                <i class="material-icons">email</i>
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="input-icon">
+                <i class="material-icons">lock</i>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+
+            <!-- Button -->
+            <button type="submit">Create Account</button>
+            
+            <div class="link">Already have account? <a href="login.html">Login</a></div>
+            <div class="message" id="msg"></div>
+        </form>
+        </div>
+</div>
+
+
+
+
+<script>
+   
+    const form = document.getElementById("form");
+    const msg = document.getElementById("msg");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        msg.innerText = "";
+        msg.style.color = "red";      
+
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        fetch("../users/signup.php", {
+            method: "POST",
+            headers: {"Content-Type": "application/x-www-form-urlencoded"},
+
+            body: new URLSearchParams({username: username,email: email,password: password})
+        })
+        .then(function(response) {return response.json();})
+        .then(function(data) {
+
+            if (data.status === "success") {
+
+                msg.style.color = "green";  
+                 msg.className = 'message success';
+                 msg.innerHTML = '<i class="fas fa-check-circle"></i> ' + data.message;
+                msg.innerText = "Account created successfully!";
+
+                setTimeout(function() {
+                    window.location.href = "login.html";
+                }, 2000);
+
+            } else {
+                msg.innerText = data.message;    
+                 msg.className = 'message error';
+            msg.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + data.message;
+            }
+
+        })
+        .catch(function(error) {
+            msg.innerText = "Unable to connect to server.";
+             msg.className = 'message error';
+            msg.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + data.message;
+            console.error(error);
+        });
+    });
+</script>
+
+</body>
+</html>
