@@ -204,147 +204,11 @@ button:hover{
     text-decoration:underline;
 }
 
-/* ================= TABLETS ================= */
+
+
+
+/* ================= MOBILE ================= */
 @media(max-width:1024px){
-
-    .registrationFrom{
-        grid-template-columns:1fr;
-    }
-
-    .card-left{
-        min-height:420px;
-        align-items:flex-end;
-        padding:40px;
-    }
-
-    .header h1{
-        font-size:2.7rem;
-    }
-
-    .service-text{
-        font-size:1.05rem;
-        max-width:800px;
-    }
-
-    .card{
-        margin-top:-110px;
-        position:relative;
-        z-index:5;
-        background:transparent;
-        padding:0 30px 40px;
-    }
-
-    form{
-        border-radius:24px;
-    }
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-
-    body{
-        background:#fff;
-    }
-
-    .registrationFrom{
-        grid-template-columns:1fr;
-    }
-
-    .card-left{
-        min-height:260px;
-        padding:25px;
-        align-items:flex-end;
-        border-bottom-left-radius:24px;
-        border-bottom-right-radius:24px;
-    }
-
-    .icon-bg{
-        width:62px;
-        height:62px;
-        font-size:32px;
-    }
-
-    .header{
-        gap:14px;
-        margin-bottom:10px;
-    }
-
-    .header h1{
-        font-size:2.2rem;
-        line-height:1.2;
-    }
-
-    .service-text{
-        font-size:1rem;
-        line-height:1.7;
-        color:rgba(255,255,255,0.88);
-
-        display:-webkit-box;
-        -webkit-line-clamp:4;
-        -webkit-box-orient:vertical;
-        overflow:hidden;
-    }
-
-    .card{
-        background:transparent;
-        padding:0 18px 30px;
-        margin-top:-70px;
-    }
-
-    form{
-        padding:30px 22px;
-        border-radius:20px;
-    }
-
-    form h2{
-        font-size:2rem;
-    }
-
-    form > p{
-        font-size:1rem;
-        margin-bottom:28px;
-    }
-
-    .input-icon input{
-        height:56px;
-        font-size:0.96rem;
-    }
-
-    button{
-        height:56px;
-    }
-
-    .link{
-        font-size:0.95rem;
-    }
-}
-
-/* ================= EXTRA SMALL ================= */
-@media(max-width:480px){
-
-    .card-left{
-        min-height:230px;
-        padding:20px;
-    }
-
-    .header h1{
-        font-size:1.9rem;
-    }
-
-    .service-text{
-        font-size:0.95rem;
-    }
-
-    .card{
-        padding:0 14px 24px;
-    }
-
-    form{
-        padding:26px 18px;
-    }
-}
-/* ================= MOBILE ================= */
-@media(max-width:768px){
 
     body{
         background:#fff;
@@ -356,7 +220,7 @@ button:hover{
 
     /* IMAGE SECTION */
     .card-left{
-        min-height:170px;
+        min-height:120px;
         padding:0;
         align-items:flex-end;
         border-radius:0;
@@ -370,15 +234,9 @@ button:hover{
         left:0;
         right:0;
         bottom:-145px;
-
         background:#fff;
-
         color:var(--text);
-
         padding:0 24px 24px;
-        border-top-left-radius:28px;
-        border-top-right-radius:28px;
-
         max-width:100%;
     }
 
@@ -463,7 +321,7 @@ button:hover{
 @media(max-width:480px){
 
     .card-left{
-        min-height:160px;
+        min-height:200px;
     }
 
     .card-paragraph{
