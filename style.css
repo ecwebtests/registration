@@ -40,7 +40,7 @@ body{
     position:relative;
     background:
         linear-gradient(rgba(5,15,35,0.58),rgba(5,15,35,0.58)),
-        url("/images/cctvinter2.jpg") center/cover no-repeat;
+        url("images/cctvinter2.jpg") center/cover no-repeat;
     display:flex;
     align-items:flex-end;
     padding:60px;
